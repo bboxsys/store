@@ -1,0 +1,22 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/bboxsys/store
+cpu: Apple M4 Max
+BenchmarkPutScoped-16                   	  203605	      6166 ns/op	    3554 B/op	      55 allocs/op
+BenchmarkPutScopedParallel-16           	  405421	      3054 ns/op	    3121 B/op	      50 allocs/op
+BenchmarkGetScoped-16                   	  342946	      3490 ns/op	    2320 B/op	      28 allocs/op
+BenchmarkGetScopedParallel-16           	  915270	      1281 ns/op	    2320 B/op	      28 allocs/op
+BenchmarkBulkWrite/PerKeyTxn-16         	     189	   6251443 ns/op	 3366851 B/op	   50562 allocs/op
+BenchmarkBulkWrite/WriteBatch-16        	     926	   1320989 ns/op	 2318660 B/op	   22368 allocs/op
+BenchmarkListScopedFullScan/n=100-16    	    4172	    286514 ns/op	  258123 B/op	    2623 allocs/op
+BenchmarkListScopedFullScan/n=1000-16   	     404	   2949947 ns/op	 1650655 B/op	   21644 allocs/op
+BenchmarkListScopedFullScan/n=10000-16  	      38	  31035412 ns/op	18266474 B/op	  210760 allocs/op
+BenchmarkGetWithQueryPaginated-16       	    1466	   1462231 ns/op	  334988 B/op	    6668 allocs/op
+BenchmarkGetScopedStream/n=1000-16      	    3668	    318166 ns/op	  543938 B/op	    3633 allocs/op
+BenchmarkGetScopedStream/n=10000-16     	     348	   3412522 ns/op	 4194560 B/op	   30741 allocs/op
+BenchmarkGetScopedStreamProjected/n=10000-16         	     122	   9821292 ns/op	 9297568 B/op	  120736 allocs/op
+BenchmarkGetScopedStreamProjected/n=100000-16        	      10	 103272721 ns/op	91385565 B/op	 1200861 allocs/op
+BenchmarkPutStream-16                                	     238	   5048952 ns/op	 5421483 B/op	   96618 allocs/op
+BenchmarkGetScopedCount-16                           	    1946	    613413 ns/op	    1879 B/op	      24 allocs/op
+PASS
+ok  	github.com/bboxsys/store	27.148s
